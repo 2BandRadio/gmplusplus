@@ -17,19 +17,6 @@ gmplusplus invisibly appends an incremented value to any data stored with `GM_se
 
 
 
-#### GM_addValueChangeListener ####
+#### Changes ####
 
-The function signature for `GM_addValueChangeListener` is now `GM_addValueChangeListener(name, callback, once = false, onDelete = true)`.
-
-The new optional argument `once` forces the listener to destroy itself after it has fired once successfully.
-
-The new optional argument `onDelete` enables or disables the firing of the listener upon value deletion. Checking for value deletion inside a callback is usually done by checking if the `curValue` parameter is `undefined` but because a value can be set to `undefined` without deleting it this method is not ideal for checking for deletion.
-
-Therefore the function signature of the `callback` function has also changed and is now `callback(name, oldValue, newValue, remote, deleted)`. The new `deleted` parameter is boolean and will be `true` if the value has been deleted via a call to `GM_deleteValue`.
-
-
-
-
-#### GM_deleteValue ####
-
-The function signature for `GM_deleteValue` is now `GM_deleteValue(nameOrRegex)`. If `nameOrRegex` is a string the function call will function as normal but if `nameOrRegex` is a regex then all values that match will be deleted.
+Some GM_* function signatures have changed and some new GM_* functions have been created. See userscript for notes.
